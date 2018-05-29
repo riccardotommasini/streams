@@ -1,0 +1,34 @@
+@base  <http://localhost:4000/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix frmt: <http://www.w3.org/ns/formats/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix vsd: <http://w3id.org/rsp/vocals-sd#> .
+@prefix vprov:  <http://w3id.org/rsp/vocals-prov#> .
+@prefix vocals: <http://w3id.org/rsp/vocals#> .
+
+<stream1> a vocals:StreamDescriptor .
+
+<stream1> a vocals:RDFStream ;
+	dcat:title "Milan Traffic Stream"^^xsd:string ;
+	dcat:description "Aggregated stream of different streams produced by traffic sensors spread around Milan"^^xsd:string ;
+        dcat:publisher <TrafficStreamPublisher> ;
+        dcat:landingPage <https://example.org/traffic/milan/> ;
+	vocals:hasEndpoint <MilanTrafficStreamEndpoint>  .
+
+<MilanTrafficStreamEndpoint> a vocals:StreamEndpoint ;
+	dcat:title "Milan Traffic Stream Endpoint"^^xsd:string ;
+	dcat:description "Streaming endpoint to consume Milan Traffic Stream via websocket"^^xsd:string ;
+	dcat:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+	dcat:format frmt:JSON-LD ;
+	dcat:accessURL "ws://localhost:4040/stream1" ;
+        vsd:publishedBy <Triplewave> .
+
+<Triplewave> a vsd:PublishingService ;
+	vsd:hasFeature vsd:replaying ;
+	vsd:resultFormat frmt:JSON-LD .

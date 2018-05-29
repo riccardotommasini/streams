@@ -1,0 +1,86 @@
+{
+  "@graph" : [ {
+    "@id" : "twitter:rictomm",
+    "@type" : "foaf:Person",
+    "name" : "user1"
+  }, {
+    "@id" : ":instant1",
+    "@type" : "time:Instant",
+    "inXSDDateTime" : "2013-01-01T00:00:00"
+  }, {
+    "@id" : "twitter:balducci",
+    "@type" : "foaf:Person",
+    "name" : "user2"
+  }, {
+    "@id" : "frEvent:tweet_1",
+    "@type" : [ "ti:Tweet", "event:Event" ],
+    "agent" : "_:b0",
+    "event:time" : {
+      "@id" : "_:b1"
+    },
+    "ti:id" : "def",
+    "lat" : "45.464272",
+    "lon" : "9.191935",
+    "ti:text" : "bla bla"
+  }, {
+    "@id" : "frEvent:tweet_2",
+    "@type" : [ "ti:Tweet", "event:Event" ],
+    "agent" : "_:b2",
+    "event:time" : {
+      "@id" : "_:b1"
+    },
+    "ti:hashtag" : "cenacolo",
+    "ti:id" : "abc",
+    "ti:text" : "bla bla"
+  } ],
+  "@id" : "urn:x-arq:DefaultGraphNode",
+  "@context" : {
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "time" : "http://www.w3.org/2006/time#",
+    "id" : {
+      "@id" : "http://streamreasoning.org/ontologies/tutorial/ICWE/id",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "lat" : {
+      "@id" : "http://streamreasoning.org/ontologies/tutorial/ICWE/lat",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "lon" : {
+      "@id" : "http://streamreasoning.org/ontologies/tutorial/ICWE/lon",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "text" : {
+      "@id" : "http://streamreasoning.org/ontologies/tutorial/ICWE/text",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "agent" : {
+      "@id" : "http://purl.org/NET/c4dm/event.owl#agent",
+      "@type" : "@id"
+    },
+    "inXSDDateTime" : {
+      "@id" : "http://www.w3.org/2006/time#inXSDDateTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "hashtag" : {
+      "@id" : "http://streamreasoning.org/ontologies/tutorial/ICWE/hashtag",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "frGrid" : "http://streamreasoning.org/ontologies/frappe/Grids/",
+    "frPixel" : "http://streamreasoning.org/ontologies/frappe/Pixels/",
+    "frPlace" : "http://streamreasoning.org/ontologies/frappe/Places/:",
+    "frCapture" : "http://streamreasoning.org/ontologies/frappe/Captures/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "frEvent" : "http://streamreasoning.org/ontologies/frappe/Events/",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "fr" : "http://streamreasoning.org/ontologies/frappe#",
+    "gs" : "http://www.opengis.net/ont/geosparql#",
+    "frFrame" : "http://streamreasoning.org/ontologies/frappe/Frames/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "ti" : "http://streamreasoning.org/ontologies/tutorial/ICWE/",
+    "frCell" : "http://streamreasoning.org/ontologies/frappe/Cells/",
+    "event" : "http://purl.org/NET/c4dm/event.owl#",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "twiter" : "https://twitter.com/"
+  }
+}
